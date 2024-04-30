@@ -1,7 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css' 
-import { Header, Navbar } from './components'
+import {  Navbar } from './components'
 import { Home } from './pages'
+import Experience from './pages/Experience'
 
 
 function App() {
@@ -10,11 +11,11 @@ function App() {
     <>
    
   <BrowserRouter> 
-  <div>
+  <div className='dark:bg-bg-slate-900'>
     <Navbar/>
-    <Header/>    
     <Routes>
     <Route path={'/'} element={<Home/>}/>
+    <Route path={'/experience'} element={<Experience/>}/>
   </Routes>
   </div> 
     

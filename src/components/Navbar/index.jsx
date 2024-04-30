@@ -4,12 +4,61 @@ import { NavLink } from "react-router-dom";
 import { HiMenuAlt1 } from "react-icons/hi";
 import { CgClose } from "react-icons/cg";
 import {
-  IoCaretUpSharp,
+  IoCaretUpSharp, IoMoon
 } from "react-icons/io5";
+import {IoMdSunny} from "react-icons/io";
 import clsx from "clsx";
 import { LanguageContext } from "../../context/LanguageContext";
 import { navLinks2 } from "../../constants/navbar2";
 const Navbar = () => {
+  const [theme,setTheme] = useState(
+    localStorage.getItem("theme") ? localStorage.getItem('theme') : 'system'
+  )
+  const element = document.documentElement;
+  const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  console.log(darkQuery, 'Darkquery');
+const options = [
+  {
+    icon:"sunny",
+    text:"light"
+  },
+  
+  {
+    icon:"sunny",
+    text:"dark"
+  },
+
+]
+useEffect(()=>{
+  switch(theme){
+    case 'dark': 
+    element.classList.add('dark');
+    localStorage.setItem('theme','dark')
+
+    break;
+    case 'light': 
+    element.classList.remove('dark');
+    localStorage.setItem('theme','light')
+     
+    break;
+
+    default: 
+    localStorage.removeItem('theme')
+    
+    break
+  }
+},[theme])
+
+function onWindowMatch(){
+  if(localStorage.theme === 'dark' || (!('theme' in localStorage) && darkQuery.matches) ){
+    element.classList.add('dark')
+  }
+  else{
+    element.classList.remove('dark')
+  }
+
+}
+onWindowMatch()
 
 
   const [sidebar, setSidebar] = useState(false);
@@ -76,7 +125,7 @@ const Navbar = () => {
     setLanguage(e.target.value);
   };
   return (
-    <div className="w-full fixed z-30 " ref={sidebarRef}>
+    <div className="w-full fixed z-30 dark:bg-slate-950 " ref={sidebarRef}>
       {/* Desktop */}
       <div
         className={clsx(
@@ -96,7 +145,7 @@ const Navbar = () => {
             <HiMenuAlt1 className="HiMenuAlt1" size={22} />
           </button>
         </Link>
-        <div className="hidden lg:block flex items-center">
+        <div className="hidden lg:block  items-center">
           <ul className="flex">
             {t('navLinks').map((nav) => (
               <li key={nav.id} className="text-white mx-5 links">
@@ -104,7 +153,7 @@ const Navbar = () => {
                   to={nav.path}
                   className={
                     active === nav.title
-                      ? "flex text-blue-800 text-lg font-semibold border-b-2 border-blue-800"
+                      ? "flex text-orange-500 text-lg font-semibold border-b-2 border-orange-500"
                       : "flex items-center text-lg font-semibold"
                   }
                   onClick={() => {
@@ -119,7 +168,11 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
-
+        <div className="flex">
+          <IoMoon onClick={()=>setTheme('dark')} className="text-dark" size={20}/>
+          <IoMdSunny onClick={()=>setTheme('light')} className="text-dark" size={20}/>
+        </div>
+        
         <div className="flex items-center">
           <div>
             <select className="outline-none p-1 text-white font-semibold text-lg border-2 border-blue-600  rounded-lg  bg-transparent	" value={language} onChange={handleLanguageChange}>
@@ -132,7 +185,7 @@ const Navbar = () => {
             className={
               profile
                 ? "absolute top-20 bg-white border shadow-lg w-auto p-3 right-3 max-md:w-1/2 max-lg:w-1/2 max-sm:w-11/12"
-                : "absolute top-20 bg-white border shadow-lg w-auto p-3 hidden flex right-3"
+                : "absolute top-20 bg-white border shadow-lg w-auto p-3 hidden  right-3"
             }
           >
             <div className="w-full relative">
@@ -178,9 +231,9 @@ const Navbar = () => {
               <NavLink
                 to={nav.path}
                 className={clsx(
-                  "flex p-1 px-2 rounded rounded-lg",
+                  "flex p-1 px-2  rounded-lg",
                   active === nav.title
-                    ? "w-auto text-blue-800 bg-blue-200 "
+                    ? "w-auto text-orange-500 bg-blue-200 "
                     : "items-center"
                 )}
                 onClick={() => {

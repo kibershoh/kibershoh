@@ -9,11 +9,13 @@ import { Link } from 'react-router-dom';
 import { BsLinkedin, BsGithub, BsInstagram, BsTelegram, BsTwitter } from 'react-icons/bs'
 import ParticlesBg from 'particles-bg';
 import { LanguageContext } from '../../context/LanguageContext';
+import { Header } from '../../components';
 const Home = () => {
   const { t, language, setLanguage } = useContext(LanguageContext);
 
   return (
     <>
+    <Header/>
       <div id='home' className='h-screen w-full relative  grid justify-between items-center gap-20'>
     
 
@@ -37,7 +39,7 @@ const Home = () => {
             speed: 450,
           }}
         >
-          <img className='w-60 h-60 max-sm:h-44 max-sm:w-44 bg-orange-600  backdrop-blur-sm  rounded-lg rounded-t-full'style={{borderRadius:"circle"}} src={me1} alt="" />
+          <img className='w-60 h-60 max-sm:h-44 max-sm:w-44  shadow-lg shadow-slate-300	  backdrop-blur-sm  rounded-lg rounded-t-full'style={{borderRadius:"circle"}} src={me1} alt="" />
 
         </Tilt> 
      </div>
