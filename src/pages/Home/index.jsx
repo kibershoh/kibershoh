@@ -26,7 +26,7 @@ const Home = () => {
             <h1 className='text-6xl  max-lg:text-4xl max-md:text-2xl max-md:w-[800px] tracking-wide	font-mono backdrop-blur-sm p-1'><span className='text-orange-500 backdrop-blur-sm'>{t('hello')}</span>, {t('MyName')}</h1>
           </div>
         </div>
-         <div className='absolute top-[60%]  left-16 max-lg:top-[85%] max-lg:left-50%'>
+         <div className='absolute top-[60%]  left-16 max-lg:top-[65%] max-lg:left-48%'>
           <button className='text-white text-lg bg-blue-600 p-3 rounded-lg flex items-center gap-5 max-lg:p-2 px-4'>
             Read more about me <LuMoveRight className='hover:rotate-90'/> 
           </button>
