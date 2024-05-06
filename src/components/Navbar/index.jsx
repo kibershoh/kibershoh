@@ -196,7 +196,7 @@ onWindowMatch()
       {/* Responsive */}
       <nav
         className={clsx(
-          "h-[50vh] w-auto border border-s-amber-100 fixed top-16 backdrop-blur-xl rounded-md  duration-1000",
+          "h-[50vh] w-auto  fixed top-16 backdrop-blur-xl rounded-md  duration-1000",
           !sidebar ? "-left-full" : " "
         )}
       >
@@ -211,10 +211,9 @@ onWindowMatch()
             >
               <NavLink
                 to={nav.path}
-                className={clsx(
-                  "flex p-1 px-2  rounded-lg text-white",
+                 className='flex p-1 px-2  rounded-lg text-black dark:text-white'
                    
-                )}
+                
                 onClick={() => {
                   setToggle(!toggle);
                   setActive(nav.title);
