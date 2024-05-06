@@ -37,7 +37,7 @@ const Header = () => {
           <img
             
            
-            src={nodejs} alt="" className='w-24 animate-pulse animate-infinite ' />
+            src={nodejs} alt="" className='w-24 animate-ping animate-infinite ' />
 
         </div>
       </div>
