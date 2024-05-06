@@ -1,0 +1,69 @@
+ 
+  .container{
+    width:250px;
+    height:250px;
+    margin:20px auto 0 auto;
+    background:transparent;
+
+    display:flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .react-logo{
+    display: inline-block;
+    border-radius:50%;
+    border:10px solid rgb(3, 3, 163);
+
+    animation-name:rotate;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+  }
+
+  .react-logo , .react-logo:before , .react-logo:after{
+    position:absolute;
+    display: inline-block;
+    width:80px;
+    height:32px;
+    border-radius:50%;
+    border:5px solid rgb(4, 4, 175);
+  }
+
+  .nucleo , .react-logo , .react-logo:before , .react-logo:after {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+
+ 
+
+  .react-logo:before , .react-logo:after{
+    content:"";
+  }
+
+  .react-logo:after{
+    transform:rotate(-57deg);
+  }
+
+  .react-logo:before{
+    transform:rotate(57deg);
+  }
+  
+.title{
+  font-size:60px;
+  background:transparent;
+  color:#00d8ff;
+  width:250px;
+  margin:2px auto;
+  text-align:center;
+}
+
+  @keyframes rotate{
+
+    100%{
+      transform:rotate(360deg);
+    }
+  }

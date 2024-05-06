@@ -10,7 +10,11 @@ import {IoMdSunny} from "react-icons/io";
 import clsx from "clsx";
 import { LanguageContext } from "../../context/LanguageContext";
 import { navLinks2 } from "../../constants/navbar2";
+import DarkModeToggler from "../../UI/darkModeToggler";
+// import ToggleButton from "../toggleButton";
 const Navbar = () => {
+
+
   const [theme,setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem('theme') : 'system'
   )
@@ -125,37 +129,41 @@ onWindowMatch()
     setLanguage(e.target.value);
   };
   return (
-    <div className="w-full fixed z-30 dark:bg-slate-950 " ref={sidebarRef}>
+    <div className="w-full fixed z-30 dark:bg-slate-300 " ref={sidebarRef}>
       {/* Desktop */}
       <div
         className={clsx(
-          "flex justify-between items-center backdrop-blur-sm border-b p-3 max-w-full w-full fixed top-0 left-0",
+          "flex justify-between items-center backdrop-blur-sm border-b-2 border-blue-200 dark:border-blue-950 p-3 max-w-full w-full fixed top-0 left-0",
           scrolled ? "shadow-md" : " "
         )}
       >
         <Link to={"/"} className="block max-lg:hidden">
-          <h1 className="text-2xl text-white max-xl:text-sm font-bold logotip pl-2">
+          <h1 className="text-2xl text-black dark:text-white max-xl:text-sm font-mono logotip pl-2">
 
             Oybek<span className="text-orange-600">Me</span>
           </h1>
         </Link>
 
-        <Link to="#" className="block text-white lg:hidden">
+        <Link to="#" className="block text-black dark:text-white lg:hidden">
           <button onClick={showSidebar}>
             <HiMenuAlt1 className="HiMenuAlt1" size={22} />
           </button>
         </Link>
-        <div className="hidden lg:block  items-center">
-          <ul className="flex">
+        <div className="max-lg:hidden">
+          <ul className="flex items-center w-1/2">
             {t('navLinks').map((nav) => (
-              <li key={nav.id} className="text-white mx-5 links">
+              <li key={nav.id} className={clsx(
+                    "mx-5 font-mono text-xl",
+                    active === nav.title
+                      ? "flex text-blue-600	 "
+                      : "flex text-black dark:text-white items-center ",
+                      
+
+                  )
+                  }>
                 <NavLink
                   to={nav.path}
-                  className={
-                    active === nav.title
-                      ? "flex text-orange-500 text-lg font-semibold border-b-2 border-orange-500"
-                      : "flex items-center text-lg font-semibold"
-                  }
+                 
                   onClick={() => {
                     setToggle(!toggle);
                     setActive(nav.title);
@@ -168,35 +176,15 @@ onWindowMatch()
             ))}
           </ul>
         </div>
-        <div className="flex">
-          <IoMoon onClick={()=>setTheme('dark')} className="text-dark" size={20}/>
-          <IoMdSunny onClick={()=>setTheme('light')} className="text-dark" size={20}/>
-        </div>
+      
         
-        <div className="flex items-center">
-          <div>
-            <select className="outline-none p-1 text-white font-semibold text-lg border-2 border-blue-600  rounded-lg  bg-transparent	" value={language} onChange={handleLanguageChange}>
-              <option value="en" className="text-md text-black  bg-transparent  font-semibold mb-10 outline-none" style={{ height: '30px' }}>English</option>
-              <option value="uz" className="text-md text-black  bg-transparent  font-semibold mb-10 outline-none">Uzbek</option>
+        <div className="flex items-center gap-10">
+        <DarkModeToggler/>
+            <select className="outline-none dark:text-white p-1 text-black font-semibold text-lg border-2 border-blue-600	 rounded-lg  bg-transparent	" value={language} onChange={handleLanguageChange}>
+              <option value="en" className="text-md text-black  bg-transparent  font-semibold mb-10 outline-none" style={{ height: '30px' }}>ENG</option>
+              <option value="uz" className="text-md text-black  bg-transparent  font-semibold mb-10 outline-none">UZB</option>
             </select>
-          </div>
-
-          <div
-            className={
-              profile
-                ? "absolute top-20 bg-white border shadow-lg w-auto p-3 right-3 max-md:w-1/2 max-lg:w-1/2 max-sm:w-11/12"
-                : "absolute top-20 bg-white border shadow-lg w-auto p-3 hidden  right-3"
-            }
-          >
-            <div className="w-full relative">
-              <IoCaretUpSharp size={25} className="absolute -top-8 right-0" />
-              {/* <div className="flex flex-col items-start ">
-                <button onClick={() => setLanguage('en')}>English</button>
-                <button onClick={() => setLanguage('es')}>Spanish</button>
-               </div> */}
-
-            </div>
-          </div>
+          
         </div>
       </div>
 

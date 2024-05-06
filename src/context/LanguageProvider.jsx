@@ -15,4 +15,4 @@ const LanguageProvider = ({children}) => {
   )
 }
 
-export default LanguageProvider
+export default LanguageProvider;

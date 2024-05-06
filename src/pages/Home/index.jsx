@@ -7,6 +7,8 @@ import './style.scss'
 import { Tilt } from 'react-tilt';
 import { Link } from 'react-router-dom';
 import { BsLinkedin, BsGithub, BsInstagram, BsTelegram, BsTwitter } from 'react-icons/bs'
+import { LuMoveRight } from "react-icons/lu";
+
 import ParticlesBg from 'particles-bg';
 import { LanguageContext } from '../../context/LanguageContext';
 import { Header } from '../../components';
@@ -20,15 +22,22 @@ const Home = () => {
     
 
         <div id="scroll_container">
-          <div id="scroll_text" className='text-white'>
-            <h1 className='text-6xl max-lg:text-4xl max-md:w-[800px] tracking-wide	font-mono'><span className='text-orange-500'>{t('hello')}</span>, {t('MyName')}</h1>
+          <div id="scroll_text" className='text-black dark:text-white'>
+            <h1 className='text-6xl max-lg:text-4xl max-md:text-2xl max-md:w-[800px] tracking-wide	font-mono'><span className='text-orange-500'>{t('hello')}</span>, {t('MyName')}</h1>
           </div>
         </div>
-        <div id="scroll_container2">
-          <div id="scroll_text2" className='text-white'>
-            <h1 className='text-6xl max-lg:text-4xl w-[1500px] tracking-wide	font-mono'><span className='text-orange-500'>{t('me')}</span>, {t('Frontend')}, {t('Freelancer')}  </h1>
+         <div className='absolute top-[60%]  left-16 max-lg:top-[85%] max-lg:left-50%'>
+          <button className='text-white text-lg bg-blue-600 p-3 rounded-lg flex items-center gap-5 max-lg:p-2 px-4'>
+            Read more about me <LuMoveRight className='hover:rotate-90'/> 
+          </button>
+        </div>
+       
+        <div id="scroll_container2"> 
+          <div id="scroll_text2" className='text-black dark:text-white'>
+            <h1 className='text-6xl max-lg:text-4xl max-md:text-2xl w-[1500px] tracking-wide	font-mono'><span className='text-orange-500'>{t('me')}</span>, {t('Frontend')}, {t('Freelancer')}  </h1>
           </div>
         </div>
+        
             <div className='absolute inset-0 grid items-center max-sm:items-center justify-center'>
         <Tilt
                     
@@ -39,7 +48,7 @@ const Home = () => {
             speed: 450,
           }}
         >
-          <img className='w-60 h-60 max-sm:h-44 max-sm:w-44  shadow-lg shadow-slate-300	  backdrop-blur-sm  rounded-lg rounded-t-full'style={{borderRadius:"circle"}} src={me1} alt="" />
+          <img className='w-60 h-60 max-sm:h-40 max-sm:w-40  shadow-lg shadow-slate-800	dark:shadow-slate-300  backdrop-blur-sm  rounded-lg rounded-t-full'style={{borderRadius:"circle"}} src={me1} alt="" />
 
         </Tilt> 
      </div>

@@ -9,11 +9,11 @@ export const translations = {
     title: "Home",
     path: '/',
   },
-  // {
-  //   id: 'skills',
-  //   title: "Skills",
-  //   path: '/skills',
-  // },
+  {
+    id: 'skills',
+    title: "Skills",
+    path: '/skills',
+  },
   {
     id: 'experience',
     title: "Experience",
@@ -40,11 +40,11 @@ export const translations = {
     title: "Bosh sahifa",
     path: '/',
   },
-  // {
-  //   id: 'konikma',
-  //   title: "Ko'nikmalar",
-  //   path: '/skills',
-  // },
+  {
+    id: 'konikma',
+    title: "Ko'nikmalar",
+    path: '/skills',
+  },
   {
     id: 'tajriba',
     title: "Tajribalar",

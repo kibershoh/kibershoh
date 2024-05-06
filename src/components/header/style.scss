@@ -1,12 +1,5 @@
 
 
-.lines {
-  position: absolute;
-  top: 0;
-  height: auto;
-  width: 100%;
-  z-index: -1000;
-}
 
 .line {
   position: absolute;
@@ -25,32 +18,32 @@
     top: -50%;
     /* left: 0; */
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #fff 75%, #000 100%);
-    animation: drop 3s 0s infinite;
+    animation: drop 4s 0s infinite;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
   }
 
   &:nth-child(1) {
-    left: 5%;
+    left: 15%;
     &::after {
       animation-delay: 0.1s;
     }
   }
   &:nth-child(2) {
-      left: 10%;
+      left: 40%;
     &::after {
 animation-delay:0.3s;
     }
   }
   &:nth-child(3) {
-      left: 20%;
+      left: 65%;
     &::after {
 animation-delay:0.5s;
     }
   }
 
   &:nth-child(4) {
-      left: 30%;
+      left: 90%;
     &::after {
 animation-delay:0.7s;
     }
@@ -92,7 +85,21 @@ animation-delay:1.9s;
     }
   }
 }
-
+.darkLine{
+   &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 100vh;
+    width: 1px;
+    top: -50%;
+    /* left: 0; */
+    background: linear-gradient(to bottom, rgba(133, 10, 10, 0) 0%, #100202 75%, #000 100%);
+    animation: drop 3s 0s infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+  }
+}
 @keyframes drop {
   0% {
     top: -50%;
