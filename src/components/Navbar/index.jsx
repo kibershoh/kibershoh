@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { HiMenuAlt1 } from "react-icons/hi";
 import { CgClose } from "react-icons/cg";
+import { MdOutlineClose } from "react-icons/md";
 import {
   IoCaretUpSharp, IoMoon
 } from "react-icons/io5";
@@ -146,11 +147,15 @@ onWindowMatch()
 
         <Link to="#" className="block text-black dark:text-white lg:hidden">
           <button onClick={showSidebar}>
-            <HiMenuAlt1 className="HiMenuAlt1" size={22} />
+            {
+              !sidebar ? <HiMenuAlt1 className="HiMenuAlt1" size={22} />
+              :
+            <MdOutlineClose className="HiMenuAlt1" size={22} />
+            }
           </button>
         </Link>
         <div className="max-lg:hidden">
-          <ul className="flex items-center w-1/2">
+          <ul className="flex items-center w-full">
             {t('navLinks').map((nav) => (
               <li key={nav.id} className={clsx(
                     "mx-5 font-mono text-xl",
@@ -191,38 +196,24 @@ onWindowMatch()
       {/* Responsive */}
       <nav
         className={clsx(
-          "h-screen fixed top-0 bg-slate-200 transition-all duration-700",
+          "h-[50vh] w-auto border border-s-amber-100 fixed top-16 backdrop-blur-xl rounded-md  duration-1000",
           !sidebar ? "-left-full" : " "
         )}
       >
-        <div className="flex justify-between items-center pr-4 pl-2">
-          <Link to="/">
-            <span>
-              {/* <img src={logotip} width={50} className="rounded-full" alt="" /> */}
-            </span>
-          </Link>
-          <CgClose
-            size={23}
-            className="ml-auto hidden max-lg:block"
-            onClick={showSidebar}
-          />
-        </div>
-        <ul className="pl-10 w-100 my-6 mt-8 ">
-          {navLinks2.map((nav) => (
+       
+        <ul className="mx-auto pl-10  my-6 ">
+          {t('navLinks').map((nav) => (
             <li
               key={nav.id}
               className={clsx(
                 "text-lg mb-3 mr-7 pr-3 links",
-                active === nav.title ? " border-r-4 border-blue-400" : " "
               )}
             >
               <NavLink
                 to={nav.path}
                 className={clsx(
-                  "flex p-1 px-2  rounded-lg",
-                  active === nav.title
-                    ? "w-auto text-orange-500 bg-blue-200 "
-                    : "items-center"
+                  "flex p-1 px-2  rounded-lg text-white",
+                   
                 )}
                 onClick={() => {
                   setToggle(!toggle);
