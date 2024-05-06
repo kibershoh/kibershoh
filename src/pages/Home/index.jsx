@@ -23,7 +23,7 @@ const Home = () => {
 
         <div id="scroll_container">
           <div id="scroll_text" className='text-black dark:text-white'>
-            <h1 className='text-6xl max-lg:text-4xl max-md:text-2xl max-md:w-[800px] tracking-wide	font-mono'><span className='text-orange-500'>{t('hello')}</span>, {t('MyName')}</h1>
+            <h1 className='text-6xl  max-lg:text-4xl max-md:text-2xl max-md:w-[800px] tracking-wide	font-mono backdrop-blur-sm p-1'><span className='text-orange-500 backdrop-blur-sm'>{t('hello')}</span>, {t('MyName')}</h1>
           </div>
         </div>
          <div className='absolute top-[60%]  left-16 max-lg:top-[85%] max-lg:left-50%'>
@@ -34,7 +34,7 @@ const Home = () => {
        
         <div id="scroll_container2"> 
           <div id="scroll_text2" className='text-black dark:text-white'>
-            <h1 className='text-6xl max-lg:text-4xl max-md:text-2xl w-[1500px] tracking-wide	font-mono'><span className='text-orange-500'>{t('me')}</span>, {t('Frontend')}, {t('Freelancer')}  </h1>
+            <h1 className='text-6xl max-lg:text-4xl max-md:text-2xl w-[1500px] tracking-wide	font-mono backdrop-blur-sm'><span className='text-orange-500'>{t('me')}</span>, {t('Frontend')}, {t('Freelancer')}  </h1>
           </div>
         </div>
         

@@ -20,13 +20,13 @@ const Header = () => {
         <div className='absolute top-32 left-96 max-lg:left-40 max-sm:left-16 text-white'>
           <ReactLogo />
         </div>
-        <div className='absolute top-48 right-64 max-lg:top-24 '>
+        <div className='absolute top-48 right-64 max-lg:top-32 '>
           <img
            
             src={redux} alt="" className='w-24 animate-bounce animate-infinite' />
 
         </div>
-        <div className='absolute top-52 right-20 max-lg:top-20 max-lg:right-4  rounded-md'>
+        <div className='absolute top-52 right-20 max-lg:top-24 max-lg:right-4  rounded-md'>
           <img
             
            
