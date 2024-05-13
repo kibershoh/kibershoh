@@ -7,11 +7,12 @@ import './style.scss'
 import { Tilt } from 'react-tilt';
 import { Link } from 'react-router-dom';
 import { BsLinkedin, BsGithub, BsInstagram, BsTelegram, BsTwitter } from 'react-icons/bs'
-import { LuMoveRight } from "react-icons/lu";
+import { LuArrowDownToDot, LuMoveRight } from "react-icons/lu";
 
 import ParticlesBg from 'particles-bg';
 import { LanguageContext } from '../../context/LanguageContext';
-import { Header } from '../../components';
+import { AboutMe, Header } from '../../components';
+import { RiArrowDownLine } from 'react-icons/ri';
 const Home = () => {
   const { t, language, setLanguage } = useContext(LanguageContext);
 
@@ -28,7 +29,7 @@ const Home = () => {
         </div>
          <div className='absolute top-[60%] z-50   left-16 max-lg:top-[65%] max-lg:left-48%'>
           <button className='text-white text-lg '>
-            <Link to={'/skills'} className='bg-blue-600 hover:bg-blue-700 hover:scale-105 duration-500 z-auto p-3 rounded-lg flex items-center gap-5 max-lg:p-2 px-4'>Read more about me <LuMoveRight className='hover:rotate-90'/> </Link>
+            <a href={`#${'about'}`} className='bg-blue-600 hover:bg-blue-700 hover:scale-105 duration-500 z-auto p-3 rounded-lg flex items-center gap-5 max-lg:p-2 px-4 '>{t('readMoreBtn')} <RiArrowDownLine size={25} className='hover:rotate-90 animate-bounce border border-white rounded-full'/> </a>
           </button>
         </div>
        
@@ -53,7 +54,7 @@ const Home = () => {
         </Tilt> 
      </div>
       </div>
- 
+     <AboutMe/>
 
     </>
   )

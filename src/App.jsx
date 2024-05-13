@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import clsx from 'clsx'
 import Skills from './pages/Skills'
+import Footer from './components/footer'
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
     <Route path={'/experience'} element={<Experience/>}/>
     <Route path={'/skills'} element={<Skills/>}/>
   </Routes>
+  <Footer/>
   </div> 
     
      

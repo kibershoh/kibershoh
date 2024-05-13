@@ -10,9 +10,9 @@ import {
 import {IoMdSunny} from "react-icons/io";
 import clsx from "clsx";
 import { LanguageContext } from "../../context/LanguageContext";
-import { navLinks2 } from "../../constants/navbar2";
 import DarkModeToggler from "../../UI/darkModeToggler";
 // import ToggleButton from "../toggleButton";
+import logome from '../../assets/logome2.png'
 const Navbar = () => {
 
 
@@ -139,12 +139,12 @@ onWindowMatch()
         )}
       >
         <Link to={"/"} className="block max-lg:hidden">
-          <h1 className="text-2xl text-black dark:text-white max-xl:text-sm font-mono logotip pl-2">
+          <h1 className="text-3xl text-black dark:text-white max-xl:text-sm font-bold font-mono logotip pl-2">
 
             Oybek<span className="text-orange-600">Me</span>
           </h1>
         </Link>
-
+ 
         <Link to="#" className="block text-black dark:text-white lg:hidden">
           <button onClick={showSidebar}>
             {
