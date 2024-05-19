@@ -28,10 +28,12 @@ export const translations = {
     Frontend: "Frontend Developer",
     Freelancer: "Freelancer",
     aboutMeBtn: "About Me",
+    view:'View more',  
     aboutMe: `I am 21 years old and I am a 3rd year student at the Tashkent University of Information Technologies. I graduated from the Frontend course. My goal is to be FullStach I am Saminov Oybek. I am 21 years old and I am a 3rd year student at the Tashkent University of Information Technologies. I graduated from the Frontend course. My goal is to be FullStach`,
     readMoreBtn:"Read more about me",
     education:"I study at Tashkent University of Information Technologies. My direction is Software fig. I'm basically learning how to build a project step by step troubleshooting.",
     year2021:"This year, the main focus was on algorithmization.Through C++ I learned many structures and understood the essence of programming.",
+   
     currentlyWorking: [
     {
       id: 1,
@@ -74,6 +76,7 @@ export const translations = {
     Frontend: "Frontend Dasturchiman",
     Freelancer: "Freelancerman",
     aboutMeBtn: "Men haqimda",
+    view:"Ko'rish",
     aboutMe: "Men Frontend yo'nalishini tamomlaganman. Maqsadim FullStach  bo'lish Men Saminov Oybek.Yoshim 21da va men Toshkent axborot texnalogiyalari universitetida 3-kurs talabasiman.Men Frontend yo'nalishini tamomlaganman. Maqsadim FullStach  bo'lish",
     readMoreBtn:"Men haqimda",
     education:"Men Toshkent axborot texnalogiyalari universiteti da o'qiyman. Mening yo'nalishim Dasturiy injiriningi. Men asosan loyihani qanday qurishlikni bosqichma bosqich muommolarni bartaraf etishlikni o'rganmoqdaman.",
